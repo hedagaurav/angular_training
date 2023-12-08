@@ -1,0 +1,13 @@
+.btn{
+    border: 2px solid goldenrod;
+    font-size: 32px;
+}
+
+.border{
+    border: 2px solid magenta;
+}
+
+
+.border-red{
+    border: 2px solid light;
+}

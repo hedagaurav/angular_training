@@ -1,0 +1,33 @@
+<p>form works!</p>
+
+<div [ngStyle]="colorme()">
+
+    <form action="" method="post">
+        <label for="firstname">firstname</label>
+        <input type="text" name="firstname" id="firstname" [ngClass]="borderclass" [(ngModel)]="firstname">
+        <label for="lastname">lastname</label>
+        <input type="text" name="lastname" id="lastname" *ngIf="filled; else displayborder" [(ngModel)]="lastname">
+        <ng-template #displayborder>
+            <input type="text" name="lastname" id="lastname" [ngClass]="borderred" [(ngModel)]="lastname">
+        </ng-template>
+        <label for="fullname">Fullname :
+            {{ firstname + ' ' + lastname }}
+        </label>
+        <div *ngIf="filled; then submitbutton else cancelbutton"></div>
+
+        <ng-template #submitbutton>
+            <input (click)="submit()" type="submit" value="Get Fullname" [ngClass]="buttonclass">
+        </ng-template>
+
+        <ng-template #cancelbutton>
+            <input (click)="submit()" type="submit" value="Cancel Operation" [ngClass]="buttonclass">
+        </ng-template>
+    </form>
+</div>
+
+<p>create basic Directive with renderer and host listener.</p>
+<input type="button" value="change color" (click) = "changecolor()">
+
+<p appHighlight> change the background color using HostListener</p>
+
+<p hicolor="yellow"> change the background color using HostBinding</p>
