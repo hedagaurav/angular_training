@@ -31,3 +31,30 @@
 <p appHighlight> change the background color using HostListener</p>
 
 <p hicolor="yellow"> change the background color using HostBinding</p>
+
+<div>
+    <h3>structural Directive</h3>
+    <p>current condition {{ condition }}</p>
+    <button type="button" (click) = "change_condition()">change condition</button>
+    <p *appIfdirective = "condition">Testing Structural directive</p>
+
+    <p *appIfdirective = "!condition"> Structural directive is working with true condition</p>
+</div>
+
+<div>
+    <h3>Ng switch</h3>
+
+    
+    <select name="colors" [(ngModel)] = "currentcolor">
+        <option value="default" selected>Default</option>
+        <option value="lightblue" >lightblue</option>
+        <option value="pink" >pink</option>
+        <option value="red" >red</option>
+    </select>
+    <div [ngSwitch] = "currentcolor">
+        <p style="background-color: white;" *ngSwitchDefault >Current color = white</p>
+        <p style="background-color: lightblue;" *ngSwitchCase ="'lightblue'">Current color = lightblue</p>
+        <p style="background-color: pink;" *ngSwitchCase ="'pink'">Current color = pink</p>
+        <p style="background-color: red;" *ngSwitchCase ="'red'">Current color = red</p>
+    </div>
+</div>

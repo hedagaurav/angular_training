@@ -3,6 +3,7 @@ import { Directive, ElementRef, HostBinding, HostListener, Input, Renderer2 } fr
 
 @Directive({
   selector: '[appHighlight]',
+  // selector: '[hicolor]',
   standalone: true
 })
 export class HighlightDirective {
@@ -11,13 +12,13 @@ export class HighlightDirective {
 
   @Input('hicolor') hcolor : string = 'pink';
 
-  // @HostListener('mouseenter') onMouseEnter() {
-  //   this.highlight('red');
-  // }
+  @HostListener('mouseenter') onMouseEnter() {
+    this.highlight('red');
+  }
 
-  // @HostListener('mouseleave') onMouseLeave() {
-  //   this.highlight('');
-  // }
+  @HostListener('mouseleave') onMouseLeave() {
+    this.highlight('');
+  }
 
   @HostBinding('style.backgroundColor') bgc : string = '';
 

@@ -1,3 +1,10 @@
 <p>App Root</p>
 <app-navbar></app-navbar>
 <app-form></app-form>
+<app-view-encapsulation>
+    <p>this content is projected from parent to child.</p>
+</app-view-encapsulation>
+
+<p #para>test</p>
+
+<button type="button" (click)="logmessage()">click to log message</button>
