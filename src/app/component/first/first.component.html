@@ -1,0 +1,21 @@
+<p>first works!</p>
+
+<button type="button" (click)="getPost()">get post</button>
+
+<!-- <ul *ngFor="let item of show">
+    <li>{{item.title}}</li>
+</ul> -->
+
+
+<h3>Pipes</h3>
+
+<h4>Date Pipe with uppercase pipe</h4>
+<p>My short Date of Birth is {{ birthdate | date: 'shortDate'}}</p>
+<p>My medium Date of Birth is {{ birthdate | date: 'mediumDate'}}</p>
+<p>My full Date of Birth is {{ birthdate | date: 'fullDate' | uppercase}}</p>
+
+<h4>Currency Pipe</h4>
+<p>On my birthday i received {{gift_amount | currency:'INR':'symbol':'1.2-4'}} amount as gift.</p>
+
+<h4>Decimal Pipe</h4>
+<p>Decimal pipe value is {{ decimal_value | number:'2.3-4'}}</p>

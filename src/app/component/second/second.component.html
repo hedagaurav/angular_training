@@ -1,0 +1,10 @@
+<p>second works!</p>
+
+<ul>
+    <li (click)="select_item(item.id)" *ngFor="let item of second_list">{{ item.name +  " " + item.id}}</li>
+    <li><a [routerLink]="['/second/',1]">gaurav 1</a></li>
+    <li><a [routerLink]="['/second',2]">gaurav 2</a></li>
+    <li><a [routerLink]="['/second',3]">gaurav 3</a></li>
+</ul>
+
+<router-outlet></router-outlet>

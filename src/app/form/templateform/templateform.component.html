@@ -1,0 +1,13 @@
+<h3>Template Driven Forms</h3>
+
+<form (ngSubmit)="formsubmit()" #nameform="ngForm">
+    <label for="">Firstname</label>
+    <br>
+    <input type="text" name="firstname" ngModel>
+    <br>
+    <label for="">Lastname</label>
+    <br>
+    <input type="text" name="lastname" ngModel>
+    <br>
+    <input type="submit" value="Get Fullname">
+</form>

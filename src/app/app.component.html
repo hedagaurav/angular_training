@@ -1,10 +1,8 @@
 <p>App Root</p>
-<app-navbar></app-navbar>
-<app-form></app-form>
-<app-view-encapsulation>
-    <p>this content is projected from parent to child.</p>
-</app-view-encapsulation>
+<nav>
+    <a routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="first" routerLinkActive="active-link">First route</a>
+    <a routerLink="second"routerLinkActive="active-link">Second route</a>
+</nav>
 
-<p #para>test</p>
-
-<button type="button" (click)="logmessage()">click to log message</button>
+<router-outlet></router-outlet>

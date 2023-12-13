@@ -1,40 +1,24 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormComponent } from './form/form.component';
 import { IfdirectiveDirective } from './directives/ifdirective.directive';
 import { ViewEncapsulationComponent } from './view-encapsulation/view-encapsulation.component';
-import { LoggerService } from './service/logger.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,NavbarComponent, FormComponent,ViewEncapsulationComponent],
+  imports: [CommonModule, RouterOutlet, RouterLink,RouterLinkActive, HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements AfterViewInit{
+export class AppComponent {
   title = 'angular_training';
 
-  @ViewChild(ViewEncapsulationComponent)
-  viewEn!: ViewEncapsulationComponent;
-
-  @ViewChild('para')
-  para! : ElementRef
-
-  constructor(private logger : LoggerService){
-    
-  }
-  ngAfterViewInit() {
-    this.viewEn.para1.nativeElement.style.backgroundColor = 'yellow';
-    this.para.nativeElement.style.color='red';
-  
-  }
-
-  logmessage(){
-    this.logger.log('this service is for logging messages.')
-  }
+  constructor(){ }
 
 }
